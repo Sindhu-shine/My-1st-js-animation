@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background-color: yellow;
+    }
+    #animate{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+    }
+</style>
+<body>
+<p><button onclick="myMove()">Tap Me</button></p>
+<h1 style="color: salmon;">My First Animation</h1>
+<div id="container">
+    <div id="animate"></div>
+</div>
+<script>
+    function myMove()
+    {
+        var elem = document.getElementById("animate");
+         var pos = 0;
+         //illusion of the  animation
+         var id = setInterval( frame,6)
+         function frame() 
+         {
+             if( pos == 350)
+             {
+                 clearInterval(id)
+             }
+             else
+             {
+               pos ++ ;
+               elem.style.top = pos + "px"
+               elem.style.left = pos + "px"
+               
+             }
+         }
+    }
+</script>
+    
+</body>
+</html>
